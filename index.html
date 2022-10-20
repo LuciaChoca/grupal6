@@ -36,12 +36,12 @@
 
             <div class="col-sm-6">
               <label for="password1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password1" minlength="6" required>
+              <input type="password" class="form-control-pass" id="password1" minlength="6" oninput="checkPass()" required>
             </div>
 
             <div class="col-sm-6">
               <label for="password2" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control" id="password2" minlength="6" required>
+              <input type="password" class="form-control-pass" id="password2" minlength="6" oninput="passIguales()" required>
             </div>
 
             <div class="col-sm-12">
@@ -81,7 +81,7 @@
         </div>
         <div class="modal-footer">
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="terminos" required>
+            <input type="checkbox" class="form-check-input" id="terminos" oninput="checkbox()" required>
             <label class="form-check-label" for="terminos">Acepto los términos y condiciones del servicio.</label>
           </div>
         </div>
