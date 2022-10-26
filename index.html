@@ -22,31 +22,52 @@
             <div class="col-sm-6">
               <label for="nombre" class="form-label">Nombre</label>
               <input type="text" class="form-control needs-validation" id="nombre" required>
+              <div class="invalid-feedback">
+                <p>Ingrese su nombre</p>
+              </div>
             </div>
 
             <div class="col-sm-6">
               <label for="apellido" class="form-label">Apellido</label>
               <input type="text" class="form-control" id="apellido" required>
+              <div class="invalid-feedback">
+                <p>Ingrese su apellido </p>
+              </div>
             </div>
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+              <input type="email" class="form-control" id="email"
+                pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+              <div class="invalid-feedback">
+                <p>Ingrese su email </p>
+              </div>
             </div>
 
             <div class="col-sm-6">
               <label for="password1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control-pass" id="password1" minlength="6" oninput="checkPass()" required>
+              <input type="password" class="form-control-pass" id="password1" minlength="6" oninput="checkPass()"
+                required>
+              <div class="invalid-feedback">
+                <p>Ingrese su contraseña </p>
+              </div>
             </div>
 
             <div class="col-sm-6">
               <label for="password2" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control-pass" id="password2" minlength="6" oninput="passIguales()" required>
+              <input type="password" class="form-control-pass" id="password2" minlength="6" oninput="passIguales()"
+                required>
+              <div class="invalid-feedback">
+                <p>Repita su contraseña</p>
+              </div>
             </div>
 
             <div class="col-sm-12">
-              <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal"
+              <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" id="terminosLink"
                 data-bs-target="#modalTerminos">Términos del servicio</button>
+              <div class="invalid-feedback">
+                <p>Debe aceptar los términos y condiciones</p>
+              </div>
             </div>
 
 
@@ -83,6 +104,9 @@
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="terminos" oninput="checkbox()" required>
             <label class="form-check-label" for="terminos">Acepto los términos y condiciones del servicio.</label>
+            <div class="invalid-feedback">
+              <p>Debe aceptar los términos y condiciones</p>
+            </div>
           </div>
         </div>
       </div>
