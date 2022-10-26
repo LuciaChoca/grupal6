@@ -21,9 +21,9 @@
 
 function checkPass(){
   const pass1 = document.getElementById("password1");
-  const valorpass = document.getElementById("password1").value.length;
+  const valorpass = document.getElementById("password1")
   const pass2 = document.getElementById("password2");
-  if (valorpass >= 6) {
+  if (valorpass.value.length >= 6) {
     pass1.classList.remove("form-novalido");
     pass1.classList.add("form-valido");
   } else {
