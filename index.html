@@ -21,9 +21,9 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control needs-validation" id="nombre" required>
+              <input type="text" class="form-control" id="nombre" required>
               <div class="invalid-feedback">
-                <p>Ingrese su nombre</p>
+                <p>Ingrese su nombre.</p>
               </div>
             </div>
 
@@ -31,7 +31,7 @@
               <label for="apellido" class="form-label">Apellido</label>
               <input type="text" class="form-control" id="apellido" required>
               <div class="invalid-feedback">
-                <p>Ingrese su apellido </p>
+                <p>Ingrese su apellido.</p>
               </div>
             </div>
 
@@ -40,25 +40,25 @@
               <input type="email" class="form-control" id="email"
                 pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
               <div class="invalid-feedback">
-                <p>Ingrese su email </p>
+                <p>Ingrese su email.</p>
               </div>
             </div>
 
             <div class="col-sm-6">
               <label for="password1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control-pass" id="password1" minlength="6" oninput="checkPass()"
+              <input type="password" class="form-control-pass" id="password1" oninput="checkPass();passIguales()"
                 required>
               <div class="invalid-feedback">
-                <p>Ingrese su contraseña </p>
+                <p>Debe ingresar una contraseña con al menos 6 caracteres.</p>
               </div>
             </div>
 
             <div class="col-sm-6">
               <label for="password2" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control-pass" id="password2" minlength="6" oninput="passIguales()"
+              <input type="password" class="form-control-pass" id="password2" oninput="passIguales()"
                 required>
               <div class="invalid-feedback">
-                <p>Repita su contraseña</p>
+                <p>Debe ser igual a "contraseña".</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@
               <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" id="terminosLink"
                 data-bs-target="#modalTerminos">Términos del servicio</button>
               <div class="invalid-feedback">
-                <p>Debe aceptar los términos y condiciones</p>
+                <p>Debe aceptar los términos y condiciones.</p>
               </div>
             </div>
 

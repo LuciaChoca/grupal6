@@ -10,7 +10,7 @@
             }
             form.classList.add("was-validated");
             if (checkPass() && form.checkValidity() && checkbox()) {
-              console.log("formulario validado")
+              alert("Formulario Validado")
             }
 
       },
@@ -21,28 +21,41 @@
 
 function checkPass(){
   const pass1 = document.getElementById("password1");
-  const valorpass = document.getElementById("password1")
   const pass2 = document.getElementById("password2");
-  if (valorpass.value.length >= 6) {
+
+  if (pass1.value.length >= 6) {
     pass1.classList.remove("form-novalido");
     pass1.classList.add("form-valido");
+    pass1.classList.remove("is-invalid");
+    pass1.classList.add("is-valid");
   } else {
     pass1.classList.remove("form-valido");
     pass1.classList.add("form-novalido");
+    pass1.classList.remove("is-valid");
+    pass1.classList.add("is-invalid");
   }
   return pass1.value == pass2.value
 }
 
 function passIguales(){
   const pass2 = document.getElementById("password2");
-  if (!checkPass()){
-    pass2.classList.remove("form-valido");
-    pass2.classList.add("form-novalido");
-  } else {
-    pass2.classList.remove("form-novalido");
-    pass2.classList.add("form-valido");
+
+  
+  if (checkPass()){
+    if (pass2.value.length < 6){
+      pass2.classList.remove("form-valido");
+      pass2.classList.add("form-novalido");
+      pass2.classList.remove("is-valid");
+      pass2.classList.add("is-invalid");
+    } else {
+      pass2.classList.remove("form-novalido");
+      pass2.classList.add("form-valido");
+      pass2.classList.remove("is-invalid");
+      pass2.classList.add("is-valid");
+    }
+
   }
-}
+  };
 
 function checkbox (){
   let terminosLink = document.getElementById("terminosLink");
