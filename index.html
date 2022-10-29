@@ -14,7 +14,7 @@
 
   <div class="container">
     <main>
-      <form action="#" method="get" class="row mt-4 needs-validation" novalidate>
+      <form action="#" method="get" class="row mt-4 needs-validation" id="form" novalidate>
         <div class="col">
           <h1 class="mb-3">Registro</h1>
           <hr class="my-4">
@@ -37,8 +37,7 @@
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email"
-                pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+              <input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
               <div class="invalid-feedback">
                 <p>Ingrese su email.</p>
               </div>
@@ -46,8 +45,7 @@
 
             <div class="col-sm-6">
               <label for="password1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control-pass" id="password1" oninput="checkPass();passIguales()"
-                required>
+              <input type="password" class="form-control" id="password1" minlength="6" oninput="checkPass2()" required>
               <div class="invalid-feedback">
                 <p>Debe ingresar una contraseña con al menos 6 caracteres.</p>
               </div>
@@ -55,19 +53,18 @@
 
             <div class="col-sm-6">
               <label for="password2" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control-pass" id="password2" oninput="passIguales()"
-                required>
+              <input type="password" class="form-control" id="password2" minlength="6" oninput="checkPass2()" required>
               <div class="invalid-feedback">
                 <p>Debe ser igual a "contraseña".</p>
               </div>
             </div>
 
             <div class="col-sm-12">
-              <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" id="terminosLink"
-                data-bs-target="#modalTerminos">Términos del servicio</button>
-              <div class="invalid-feedback">
-                <p>Debe aceptar los términos y condiciones.</p>
-              </div>
+              <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal"
+                data-bs-target="#modalTerminos" id="terminosLink">Términos del servicio</button>
+                <div class="invalid-feedback">
+                  <p>Debe aceptar los términos y condiciones.</p>
+                </div>
             </div>
 
 
