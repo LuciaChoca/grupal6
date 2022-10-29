@@ -4,6 +4,7 @@
   Array.prototype.slice.call(forms).forEach(function (form) {
     form.addEventListener("submit", function (event) {
       checkbox();
+      pass2error();
             if (!form.checkValidity()){
               event.preventDefault()
               event.stopPropagation();
@@ -39,22 +40,20 @@ function checkPass(){
 
 function passIguales(){
   const pass2 = document.getElementById("password2");
+  const pass1 = document.getElementById("password1");
 
-  
-  if (checkPass()){
-    if (pass2.value.length < 6){
+  if (pass1.value == pass2.value && pass2.value.length >5 ){
+    pass2.classList.remove("form-novalido");
+    pass2.classList.add("form-valido");
+    pass2.classList.remove("is-invalid");
+    pass2.classList.add("is-valid");
+    } else {
+
       pass2.classList.remove("form-valido");
       pass2.classList.add("form-novalido");
       pass2.classList.remove("is-valid");
       pass2.classList.add("is-invalid");
-    } else {
-      pass2.classList.remove("form-novalido");
-      pass2.classList.add("form-valido");
-      pass2.classList.remove("is-invalid");
-      pass2.classList.add("is-valid");
     }
-
-  }
   };
 
 function checkbox (){
@@ -72,4 +71,13 @@ function checkbox (){
     terminosLink.classList.add("is-invalid");
   }
 return checkbox.checked;
+}
+
+function pass2error() {
+  const pass2 = document.getElementById("password2");
+  if (!(pass2.classList.contains("form-valido"))){
+    pass2.classList.add("form-novalido");
+    pass2.classList.add("is-invalid");
+  }
+
 }
